@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class A
+{
+public:
+int x,y;
+};
+int main()
+{
+//Pointer to member variable x of class A
+int A::* ptr1 = &A :: x;
+
+//Pointer to member variable y of class A
+int A::* ptr2 = &A :: y;
+
+//Creating an object of class A
+A obj;
+
+obj.*ptr1 = 10;
+obj.*ptr2 = 20;
+
+cout<<"The value of x is : " << obj.*ptr1<<endl;
+cout<<"The value ot y is : " << obj.*ptr2<<endl;
+}
