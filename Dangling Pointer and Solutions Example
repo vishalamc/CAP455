@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  //memory allocation
+
+  int *ptr = new int(2);
+  cout<<*ptr<<endl;
+  //dangling pointer
+  delete ptr;
+  cout<<*ptr;
+  ptr=NULL;// solution
+  cout<<*ptr;
+}
