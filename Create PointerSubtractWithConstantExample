@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a[10]{11,22,33,44,55,66,77,88,99,100};
+    cout<<"Address of 5th element of an array: "<<&a[5]<<endl;
+    int *ptr=&a[5];
+    cout<<"Address of pointer: "<<&ptr<<endl;
+    cout<<"Address of current element of an array: "<<ptr<<endl;
+    cout<<"Value of current element in array: "<<*ptr<<endl;
+    ptr=ptr-5;
+    cout<<"After subtracting constant 5 Address of new element of an array: "<<ptr<<endl;
+    cout<<"After subtracting new element of an array:"<<*ptr<<endl;
+    return 0;
+}
