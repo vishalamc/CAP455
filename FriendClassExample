@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+class Admin
+{
+    string adminName;
+    int adminId;
+    friend class SuperAdmin;
+public:
+    Admin()
+    {
+       adminName="Admin";
+       adminId=1234;
+    }
+    void getAdmin()
+    {     cout<<"Admin:"<<adminName<<endl;
+          cout<<"Admin Id:"<<adminId<<endl;
+    }
+
+};
+class SuperAdmin{
+public:
+    void getSuperAdmin(Admin &admn)
+    {
+        cout<<"Admin:"<<admn.adminName<<endl;
+        cout<<"Admin Id:"<<admn.adminId<<endl;
+    }
+};
+int main()
+{
+Admin A;
+SuperAdmin B;
+B.getSuperAdmin(A);
+    return 0;
+}
