@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+ int x=10;
+ int y=20;
+void swap(int x,int y)
+{
+   x=20;
+   y=10;
+}
+int main()
+{
+    cout<<"Before Swap"<<endl;
+    cout<<"x:"<<x<<" y:"<<y;
+    swap(x,y);
+    cout<<"After swap"<<endl;
+    cout<<"x:"<<x<<" y:"<<y;
+    return 0;
+}
