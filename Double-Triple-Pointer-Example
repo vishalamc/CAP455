@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x=10;
+    cout<<"Address of x: "<<&x<<endl;
+    cout<<"Value of x: "<<x<<endl;
+    int *ptr1=&x;
+    *ptr1=20;
+    cout<<"Address of x in ptr1: "<<ptr1<<endl;
+    cout<<"Value Changed of x using ptr1: "<<x<<endl;
+    cout<<"Address of ptr1: "<<&ptr1<<endl;
+    int **ptr2=&ptr1;
+    **ptr2=30;
+    cout<<"Address of ptr1 in ptr2: "<<ptr2<<endl;
+    cout<<"Value Changed of x using ptr2: "<<x<<endl;
+    int ***ptr3=&ptr2;
+    ***ptr3=40;
+    cout<<"Address of ptr2: "<<&ptr2<<endl;
+    cout<<"Address of ptr2 in ptr3: "<<ptr3<<endl;
+    cout<<"Value Changed of x using ptr3: "<<x<<endl;
+    return 0;
+}
