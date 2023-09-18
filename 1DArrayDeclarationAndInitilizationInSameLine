@@ -1,0 +1,17 @@
+// 1D-Array Declaration And Initilization In SameLine
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int Marks[]={10,20,30,40,50};
+
+    int length=sizeof(Marks)/sizeof(Marks[0]);
+
+    for(int i=0;i<length;i++)
+    {
+        cout<<Marks[i]<<endl;
+    }
+    return 0;
+}
