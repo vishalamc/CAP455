@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+string str;
+cout<<"Enter String"<<endl;
+getline(cin,str);
+cout<<"You have entered:"<<str<<endl;
+str.push_back('T');
+cout<<"After applying push back function "<<str<<endl;;
+str.pop_back();
+cout<<"After applying pop back function "<<str<<endl;
+}
