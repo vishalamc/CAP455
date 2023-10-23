@@ -1,0 +1,62 @@
+#include <iostream>
+#include<fstream>
+using namespace std;
+
+class Product{
+    public:
+        string pName;
+        int quantity;
+        float price;
+
+        void setProduct()
+        {
+
+            cout<<"Enter Product Name"<<endl;
+            cin>>pName;
+            cout<<"Enter Quantity"<<endl;
+            cin>>quantity;
+            cout<<"Enter Price"<<endl;
+            cin>>price;
+
+        }
+        void getProduct()
+        {
+            cout<<"Product: "<<pName<<endl;
+            cout<<"Price: "<<price<<endl;
+            cout<<"Quantity: "<<quantity<<endl;
+        }
+};
+
+int main()
+{
+    int choice;
+    Product p1;
+    ofstream fout;
+    ifstream fin;
+    do{
+        cout<<"Select Your Choice:"<<endl;
+        cout<<"1.Add Product\n2.Display Product\n3.Exit"<<endl;
+        cin>>choice;
+        switch(choice)
+        {
+            case 1: fout.open("myProduct.dat",ios::app);
+                    p1.setProduct();
+                    fout.write((char*)&p1,sizeof(p1));
+                    fout.close();
+                    cout<<"Product Added Successfully"<<endl;
+                    break;
+            case 2:
+                    fin.open("myProduct.dat");
+                    while(fin.read((char*)&p1,sizeof(p1)))
+                    {
+                        p1.getProduct();
+                    }
+                    fin.close();
+                    break;
+            default:exit(0);
+
+        }
+    }while(choice!=3);
+
+    return 0;
+}
